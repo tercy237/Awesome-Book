@@ -106,7 +106,7 @@ sh
 :bust_in_silhouette: *Tercy mbiydzenyuy* *Ngala Mac*
 
 - GitHub: [@tercy_mbiydzenyuy]https://github.com/tercy237
--Github:[@ngalamac]https://github.com/ngalamac
+-Github:[@ngalamac]
  FUTURE FEATURES
 
  ## :telescope: Future Features <a name="future-features"></a>
