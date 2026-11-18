@@ -27,7 +27,7 @@ In this project, you will build a basic website that allows users to add/remove 
 
 - Implement only a basic UI with plain HTML:
 <p align="center">
-  <img src="./images/awesome_books_basic_ui.png" alt="Basic UI"  width="300px"/>
+  <img src="./assets/images/awesome_books_basic_ui.png" alt="Basic UI"  width="300px"/>
 </p>
 
 - Create a collection that keeps a list of books (hint: you can use an array of objects for that).
