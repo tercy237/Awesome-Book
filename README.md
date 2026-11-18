@@ -1,11 +1,11 @@
-# Awesome-Book
-# Te<a name="readme-top"></a>
+# Awesome Books
+# <a name="readme-top"></a>
 
 <div align="center">
 
   <br/>
 
-  <h1><b>Awesome Book</b></h1>
+  <h1><b>Awesome-Books: Plain HTML</b></h1>
 
 </div>
 
@@ -30,23 +30,24 @@
 
 # :book:Awasome Book  Project<a name="about-project"></a>
 
-This is the first technical Microverse project it tests more on Git, GitHub, GitHub Workflow and Linters.
+This project uses a Medium fidelity wireframe to harness a book library project using javascript objects/classes
 
-*[Hello-Microverse]* is a HTML CSS project
+*[AWESOME-BOOKS]* is a javascript project, beginner friendly
 
 ## :hammer_and_wrench: Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
 
 - HTML
-- CSS
-- Linters
+- Javascript
+- Linters(eslint)
+- Text Editor: VS Code
 
 ### Key Features <a name="key-features"></a>
 
-- *Understanding Git, GitHub and GitHub Workflow*
-- *Configuring Linters*
-- *Creating pull requests and merging*
+- *Add and Remove Book from Library Array*
+- *Use of javascript objects /classes*
+- *Use of Browser local storage*
 
 A demo link will be uploaded subsequently.
 
@@ -89,7 +90,7 @@ To run the project, start the html file on live server
 To run tests, run the following command:
 sh
   npx hint .
-  npx stylelint "**/*.{css,scss}"
+  npx eslint .
 
 
 ### Deployment
@@ -103,16 +104,20 @@ sh
 
 ## :busts_in_silhouette: Authors <a name="authors"></a>
 
-:bust_in_silhouette: *Tercy mbiydzenyuy* *Ngala Mac*
+:bust_in_silhouette: 
+<br>
+*Tercy mbiydzenyuy* 
+- GitHub: [@tercy_mbiydzenyuy](https://github.com/tercy237)
+<br>
+*Ngala Mac*
+- Github:[@ngalamac](https://github.com/ngalamac)
 
-- GitHub: [@tercy_mbiydzenyuy]https://github.com/tercy237
--Github:[@ngalamac]https://github.com/ngalamac
  FUTURE FEATURES
 
  ## :telescope: Future Features <a name="future-features"></a>
 
-- integration with javascript
-- Adding more html contents
+- Creating a responsive Nav Bar for all sections
+- Using modern tech approach like SPA to restructure the code
 
 ## :handshake: Contributing <a name="contributing"></a>
 
@@ -120,7 +125,7 @@ Contributions, issues, and feature requests are welcome!
 
 ## :pray: Acknowledgments <a name="acknowledgements"></a>
 
-I will like to thank microverse and all the students i've collaborated with
+I will like to thank codegisoft academy and all the students i've collaborated with
 
 ## :memo: License <a name="license"></a>
 
