@@ -1,74 +1,36 @@
-const titleInput = document.getElementById('title');
-const authorInput = document.getElementById('author');
-const bookList = document.getElementById('book-list');
-const form = document.getElementById('form');
+//Get elements by ID from document
+const title = document.getElementById("title");
+const author =document.getElementById("author");
+const summitButton = document.getElementById("submit");
+const bookList = document.getElementById("book-list");
+const form = document.getElementById("form");
 
-const Collection = {
-  books: [],
-};
-
-function saveBooks() {
-  localStorage.setItem('books', JSON.stringify(Collection.books));
+//Create Collection object, inside which will reside an array of book objects
+const Collection ={
+    books: []
 }
-
-function renderBooks() {
-  bookList.replaceChildren();
-
-  Collection.books.forEach((book) => {
-    const bookElement = document.createElement('article');
-    const titleElement = document.createElement('h2');
-    const authorElement = document.createElement('p');
-    const removeButton = document.createElement('button');
-
-    bookElement.className = 'book';
-    titleElement.textContent = book.title;
-    authorElement.textContent = book.author;
-    removeButton.type = 'button';
-    removeButton.textContent = 'Remove';
-    removeButton.addEventListener('click', () => {
-      Collection.books = Collection.books.filter((savedBook) => savedBook.id !== book.id);
-      saveBooks();
-      renderBooks();
-    });
-
-    bookElement.append(titleElement, authorElement, removeButton);
-    bookList.append(bookElement);
-  });
+//Create method to add to localstorage
+function saveBooks(){
+    localStorage.setItem("books", JSON.stringify(Collection.books));
 }
-
-function loadBooks() {
-  const savedBooks = localStorage.getItem('books');
-
-  if (savedBooks !== null) {
-    const parsedBooks = JSON.parse(savedBooks);
-    if (!Array.isArray(parsedBooks)) {
-      throw new Error('Saved books must be an array.');
+//create method to retrieve from local storage
+function loadBooks(){
+ const savedBooks = localStorage.getItem("books");
+ if(savedBooks){
+    const loadedBooks = JSON.parse(savedBooks)
+    //u can access the data stored here
+ }
+ else{
+ console.log('use data not found in the local storage')   
+ }
+}
+//creating and adding book to the books collection
+function addBook(title,author){
+    const newBook = {
+        id: new Date(),
+        title:title.value,
+        author:author.value
     }
-    Collection.books = parsedBooks;
-  }
+    Collection.books.push(newBook);
+    saveBooks();
 }
-
-function addBook(title, author) {
-  const newBook = {
-    id: `${Date.now()}-${Math.random()}`,
-    title: title.trim(),
-    author: author.trim(),
-  };
-
-  Collection.books.push(newBook);
-  saveBooks();
-  renderBooks();
-}
-
-form.addEventListener('submit', (event) => {
-  event.preventDefault();
-  if (!form.reportValidity()) {
-    return;
-  }
-
-  addBook(titleInput.value, authorInput.value);
-  form.reset();
-});
-
-loadBooks();
-renderBooks();
