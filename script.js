@@ -1,18 +1,18 @@
-const title = document.getElementById("title");
-const author = document.getElementById("author");
-const bookList = document.getElementById("book-list");
-const form = document.getElementById("form");
+const title = document.getElementById('title');
+const author = document.getElementById('author');
+const bookList = document.getElementById('book-list');
+const form = document.getElementById('form');
 
 const Collection = {
   books: [],
 };
 
 function saveBooks() {
-  localStorage.setItem("books", JSON.stringify(Collection.books));
+  localStorage.setItem('books', JSON.stringify(Collection.books));
 }
 
 function loadBooks() {
-  const savedBooks = localStorage.getItem("books");
+  const savedBooks = localStorage.getItem('books');
   if (savedBooks) {
     Collection.books = JSON.parse(savedBooks);
   }
@@ -27,26 +27,23 @@ function addBook() {
   Collection.books.push(newBook);
   saveBooks();
 }
-//remove book method
-function removeBook(id) {
-  Collection.books = Collection.books.filter((book) => book.id !== id);
-  saveBooks();
-  displayBooks();
-}
 
 function displayBooks() {
-  bookList.innerHTML = "";
+  bookList.innerHTML = '';
   Collection.books.forEach((book) => {
-    const bookContainer = document.createElement("div");
-    const titleText = document.createElement("p");
-    const authorText = document.createElement("p");
-    const removeBtn = document.createElement("button");
+    const bookContainer = document.createElement('div');
+    const titleText = document.createElement('p');
+    const authorText = document.createElement('p');
+    const removeBtn = document.createElement('button');
 
     titleText.textContent = book.title;
     authorText.textContent = book.author;
-    removeBtn.textContent = "Remove";
-    removeBtn.type = "button";
-    removeBtn.addEventListener("click", () => removeBook(book.id));
+    removeBtn.textContent = 'Remove';
+    removeBtn.type = 'button';
+    removeBtn.addEventListener('click', () => {
+      // eslint-disable-next-line no-use-before-define
+      removeBook(book.id);
+    });
 
     bookContainer.appendChild(titleText);
     bookContainer.appendChild(authorText);
@@ -55,7 +52,14 @@ function displayBooks() {
   });
 }
 
-form.addEventListener("submit", (event) => {
+// remove book method
+function removeBook(id) {
+  Collection.books = Collection.books.filter((book) => book.id !== id);
+  saveBooks();
+  displayBooks();
+}
+
+form.addEventListener('submit', (event) => {
   event.preventDefault();
   addBook();
   form.reset();
