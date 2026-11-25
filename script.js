@@ -27,8 +27,8 @@ this.books = JSON.parse(savedBooks)
 addBook(title,author){
   const titre = title.trim();
   const auteur = author.trim();
-  if(!titre && !auteur) return false;
-  this.books.push(new Book(titre,auteur));
+  if(!titre || !auteur) return false;
+  this.books.push(new Books(titre,auteur));
   this.saveBook();
   return true;
 }
@@ -42,6 +42,7 @@ removeBook(id){
 class BookApp {
   constructor() {
     this.collection = new BookCollection();
+    this.collection.loadBook();
     this.titleInput = document.getElementById("title");
     this.authorInput = document.getElementById("author");
     this.list = document.getElementById("book-list");
@@ -49,7 +50,7 @@ class BookApp {
 
     this.form.addEventListener("submit", (event) => {
       event.preventDefault();
-      if (this.collection.add(this.titleInput.value, this.authorInput.value)) {
+      if (this.collection.addBook(this.titleInput.value, this.authorInput.value)) {
         this.form.reset();
         this.render();
       }
@@ -59,7 +60,7 @@ class BookApp {
   }
 
   removeBook(id) {
-    this.collection.remove(id);
+    this.collection.removeBook(id);
     this.render();
   }
 
