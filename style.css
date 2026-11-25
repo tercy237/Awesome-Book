@@ -1,0 +1,39 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    padding: 50px 30%;
+    background: url(./assets/images/library_background.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+header h1{
+text-align: center;
+font-weight: bold;
+background-color: #eee;
+}
+.book-list{
+    border: 5px solid;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    background-color: #fff;
+    opacity: 70%;
+}
+.book-list div{
+    border: 1px solid;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+}
+.book-list div p{
+    font-size: 20px;
+}
+.book-list div button{
+    border: 2px solid;
+    padding: 5px 10px;
+    font-size: 20px;
+}
