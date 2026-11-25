@@ -48,6 +48,10 @@ header h1 {
   border-bottom: 0;
 }
 
+.book-list div.grey-book {
+  background-color: #b9b9b9;
+}
+
 .book-list div p {
   font-size: 20px;
 }
