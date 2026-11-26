@@ -8,15 +8,25 @@
 </head>
 <body>
   <header>
-    <h1>All Awesome books</h1>
+    <nav class="navbar">
+<a href="#list" class="brand" data-section="list">Awesome Books</a>
+<ul class="nav-links">
+  <li><a href="#list" data-section="list" class="active">List</a></li>
+  <li><a href="#add" data-section="add">Add new</a></li>
+  <li><a href="#contact" data-section="contact">Contact</a></li>
+</ul>
+    </nav>
+    <p class="date" id="date"></p>
   </header>
 
   <main>
-    <section class="book-list" id="book-list">
-      
-    </section>
-
-    <section class="about">
+    <div class="section active" id="list">
+      <h1>All Awesome Books</h1>
+      <section  class="book-list" id="book-list"></section>
+    </div>
+<div class="section" id="add">
+  <h1>Add A New Book</h1>
+      <section class="about">
       <form id="form">
         <p>Add a new book</p>
         <input type="text" name="title" id="title" placeholder="Title" required><br>
@@ -24,7 +34,20 @@
         <button type="submit" id="submit-button">Add</button>
       </form>
     </section>
+</div>
+<div class="section" id="contact">
+  <h1>Contact Information</h1>
+  <div class="contact-info">
+    <p>Do you have any questions or you just want to say "Hello"?</p>
+    <ul>
+      <li>Our email: mbiydzenyuytercy@gmail.com</li>
+      <li>Our phone number: 650226597</li>
+      <li>Our address: Yaoundé 6- Akok-Ndoe Cameroon</li>
+    </ul>
+  </div>
+</div>
   </main>
+  <footer class="footer">Copyright &copy; Awesome Book|| powered by CODEGISOFT SARL</footer>
   <script src="./script.js"></script>
 </body>
 </html>
