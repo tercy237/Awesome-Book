@@ -104,5 +104,55 @@ class BookApp {
     });
   }
 }
+// Navigation class
+class Navigation {
+  constructor() {
+    this.links = document.querySelectorAll('[data-section]');
+    this.sections = document.querySelectorAll('.section');
+    this.links.forEach((link) => {
+      link.addEventListener('click', (event) => {
+        event.preventDefault();
+        this.show(link.dataset.section);
+      });
+    });
+  }
 
+  show(id) {
+    this.sections.forEach((section) => {
+      section.classList.toggle('active', section.id === id);
+    });
+    document.querySelectorAll('.nav-links a').forEach((link) => {
+      link.classList.toggle('active', link.dataset.section === id);
+    });
+  }
+}
+// The clock class
+class Clock {
+  constructor(element) {
+    this.element = element;
+    this.update();
+    setInterval(() => this.update(), 1000);
+  }
+
+  static ordinal(day) {
+    if (day >= 11 && day <= 13) return `${day}th`;
+    const suffix = { 1: 'st', 2: 'nd', 3: 'rd' }[day % 10] || 'th';
+    return `${day}${suffix}`;
+  }
+
+  update() {
+    const now = new Date();
+    const month = now.toLocaleString('en-US', { month: 'long' });
+    const time = now.toLocaleTimeString('en-US',
+      {
+        hour: 'numeric',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: true,
+      }).toLowerCase();
+    this.element.textContent = `${month} ${Clock.ordinal(now.getDate())} ${now.getFullYear()}, ${time}`;
+  }
+}
+window.bookNavigation = new Navigation();
+window.bookClock = new Clock(document.getElementById('date'));
 window.bookApp = new BookApp();

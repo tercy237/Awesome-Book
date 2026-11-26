@@ -29,7 +29,7 @@ In this project, you will build a basic website that allows users to add/remove 
 <p align="center">
   <img src="./assets/images/awesome_books_basic_ui.png" alt="Basic UI"  width="300px"/>
 </p>
-
+https://codegisoftacademyhq.slack.com/files/U0C8RGBF878/F0CM6C2KLH0/image.png
 - Create a collection that keeps a list of books (hint: you can use an array of objects for that).
 - Create a function to add a new book to the collection, with title and author.
 - Create a function to remove a book from the collection (hint: you can use the [array filter()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter) method).
